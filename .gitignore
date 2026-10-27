@@ -1,0 +1,31 @@
+﻿# Datos y configuracion de cada instalacion: nunca se suben
+config.local.json
+secretos/
+*.key
+*.token
+.env
+
+# Lo que generan los scripts al usarse
+*.log
+logs/
+estado/
+rename-log.csv
+renombrar*.csv
+candidatos-borrar.csv
+borrados-log.csv
+Reporte-espacio.html
+_obsoleto/
+
+# Biblioteca y descargas (por si alguien clona dentro de la carpeta del servidor)
+Movies/
+Shows/
+Descargas/
+*.mkv
+*.mp4
+*.avi
+*.srt
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

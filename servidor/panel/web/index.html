@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servidor de medios</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/estilo.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<header class="barra">
+  <div class="marca">
+    <div class="logo" aria-hidden="true"></div>
+    <div>
+      <h1>Servidor de medios</h1>
+      <p class="sub">Panel local · solo en esta PC (127.0.0.1)</p>
+    </div>
+  </div>
+  <div class="barra-der">
+    <span id="resumen" class="pill pill-neutro">Cargando…</span>
+    <span id="actualizado" class="tenue"></span>
+    <button id="btn-actualizar" class="btn">Actualizar</button>
+  </div>
+</header>
+
+<main>
+  <section class="kpis" id="kpis" aria-label="Estado general"></section>
+  <div id="reproducciones"></div>
+
+  <div class="grilla">
+    <section class="tarjeta">
+      <header class="tarjeta-cab">
+        <div><h2>Servicios</h2><p class="tenue">Si algo está caído, arrancalo o reinicialo desde acá.</p></div>
+      </header>
+      <div id="servicios" class="cuerpo"><p class="cargando">Leyendo servicios…</p></div>
+    </section>
+
+    <section class="tarjeta">
+      <header class="tarjeta-cab">
+        <div><h2>Avisos de salud</h2><p class="tenue" id="salud-nota">Lo que reporta cada app.</p></div>
+        <button id="btn-salud" class="btn btn-chico">Revisar ahora</button>
+      </header>
+      <div id="salud" class="cuerpo"><p class="cargando">Preguntando a cada app…</p></div>
+    </section>
+  </div>
+
+  <section class="tarjeta">
+    <header class="tarjeta-cab">
+      <div><h2>Descargas en curso</h2><p class="tenue" id="descargas-nota"></p></div>
+      <a class="btn btn-chico" id="abrir-qbit" href="#" target="_blank" rel="noopener" hidden>Abrir qBittorrent</a>
+    </header>
+    <div id="descargas" class="cuerpo"><p class="cargando">Leyendo qBittorrent…</p></div>
+  </section>
+
+  <section class="tarjeta">
+    <header class="tarjeta-cab">
+      <div><h2>Diagnóstico</h2><p class="tenue">Problemas que ya tuvimos y pueden volver a pasar. <span id="diag-nota"></span></p></div>
+      <button id="btn-diag" class="btn btn-chico">Volver a revisar</button>
+    </header>
+    <div id="diag" class="cuerpo"><p class="cargando">Revisando… tarda unos segundos.</p></div>
+  </section>
+
+  <section class="tarjeta">
+    <header class="tarjeta-cab">
+      <div><h2>Espacio y candidatos a borrar</h2><p class="tenue" id="espacio-nota"></p></div>
+      <button id="btn-reporte" class="btn btn-chico">Regenerar lista</button>
+    </header>
+    <div id="espacio" class="cuerpo"><p class="cargando">Midiendo carpetas…</p></div>
+  </section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-titulo">
+  <form method="dialog" id="dlg-form">
+    <h3 id="dlg-titulo"></h3>
+    <div id="dlg-cuerpo"></div>
+    <label id="dlg-palabra-lbl" class="palabra" hidden>
+      <span id="dlg-palabra-txt"></span>
+      <input id="dlg-palabra" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="dlg-botones">
+      <button value="no" class="btn" id="dlg-no">Cancelar</button>
+      <button value="si" class="btn btn-primario" id="dlg-si">Confirmar</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="caido" class="caido" hidden>
+  <div>
+    <h2>El panel se cerró</h2>
+    <p>Abrilo de nuevo con <b id="caido-bat">Panel-Media.bat</b>.</p>
+  </div>
+</div>
+</body>
+</html>

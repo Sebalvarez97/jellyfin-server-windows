@@ -1,0 +1,9 @@
+# Scripts de Windows: siempre con saltos de linea CRLF (un .bat con LF puede fallar)
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+*.json text eol=crlf
+*.md   text eol=crlf
+*.js   text eol=crlf
+*.css  text eol=crlf
+*.html text eol=crlf

@@ -1,0 +1,21 @@
+{
+  "Raiz": "D:\\JellyFin",
+  "Peliculas": "Movies",
+  "Series": "Shows",
+  "Descargas": "Descargas",
+  "IpServidor": "192.168.1.50",
+  "RedLocal": "192.168.1.0/24",
+  "ZonaHoraria": "America/Argentina/Buenos_Aires",
+  "UsuarioDescargas": "media",
+  "Zrok": {
+    "Habilitado": false,
+    "Exe": "C:\\Users\\TU_USUARIO\\zrok\\zrok2.exe",
+    "Entorno": "C:\\Users\\TU_USUARIO\\.zrok2",
+    "NombreJellyfin": "",
+    "NombreSeerr": ""
+  },
+  "Reporte": {
+    "DiasVisto": 60,
+    "UmbralPct": 80
+  }
+}
